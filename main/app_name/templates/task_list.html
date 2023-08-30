@@ -1,0 +1,18 @@
+{% extends 'home.html'%}
+
+{% block content%}
+<h2>Task list</h2>
+{% for task in tasks %}
+{{task.title}}-{{task.description}}--
+{% if task.completed %}
+Completed
+{%else%}
+Not comoleted
+{%endif%}
+<a href="update/{{task.id}}">
+    update
+</a>
+<br>
+
+{%endfor%}
+{% endblock %}
